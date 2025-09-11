@@ -1,0 +1,17 @@
+# Allow major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Allow social media link previews
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Block all other bots by default
+User-agent: *
+Disallow: /
