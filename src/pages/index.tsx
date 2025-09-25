@@ -74,8 +74,11 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-electric flex items-center justify-center glow-electric">
-                <span className="text-background font-bold text-lg">E</span>
+              <div className="w-8 h-8 rounded-lg bg-gradient-vibranium flex items-center justify-center glow-vibranium">
+                <img 
+                  src="/logo.png" 
+                  alt="Electroverse Logo" 
+                  className="h-10 w-10 object-contain"/>
               </div>
               <span className="font-tech text-xl font-bold text-electric">
                 ELECTROVERSE

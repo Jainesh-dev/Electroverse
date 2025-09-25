@@ -39,7 +39,10 @@ const Navbar = ({ activeSection, onNavigate }: NavbarProps) => {
             onClick={() => onNavigate("home")}
           >
             <div className="w-8 h-8 rounded-lg bg-gradient-vibranium flex items-center justify-center glow-vibranium">
-              <span className="text-background font-bold text-lg">E</span>
+               <img 
+                src="/logo.png" 
+                alt="Electroverse Logo" 
+                className="h-10 w-10 object-contain"/>
             </div>
             <span className="font-tech text-xl font-bold text-vibranium">
               ELECTROVERSE
