@@ -40,7 +40,7 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
 
           {/* Main Heading */}
           <div className="inline-block px-6 sm:px-12 py-4 sm:py-6 rounded-full border-4 border-vibranium glow-vibranium mb-6">
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-tech font-bold leading-tight text-vibranium">
+            <h1 className="text-4xl sm:text-6xl md:text-5xl font-tech font-bold leading-tight text-vibranium">
               ELECTROVERSE
             </h1>
           </div>
