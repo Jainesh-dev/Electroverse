@@ -6,9 +6,15 @@ import AboutSection from "@/components/About";
 import EventsSection from "@/components/Events";
 import TeamSection from "@/components/Team";
 import ContactSection from "@/components/Contact";
+import { Instagram, Linkedin } from "lucide-react";
 
 const Index = () => {
   const [activeSection, setActiveSection] = useState("home");
+
+  const socialLinks = {
+     instagram: "https://www.instagram.com/electroverse.comm_tsec/",
+    linkedin: "https://www.linkedin.com/company/electroverse-comm-tsec/"
+  };
 
   const handleNavigate = (section: string) => {
     setActiveSection(section);
@@ -74,23 +80,40 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="text-center">
             <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-vibranium flex items-center justify-center glow-vibranium">
+              <div className="w-8 h-8 rounded-lg flex items-center justify-center">
                 <img 
                   src="/logo.png" 
                   alt="Electroverse Logo" 
-                  className="h-10 w-10 object-contain"/>
+                  className="h-10 w-10 object-contain"
+                />
               </div>
-              <span className="font-tech text-xl font-bold text-electric">
+              <span className="font-tech text-xl font-bold text-electric bg-gradient-to-r from-purple-400 to-gray-500 bg-clip-text text-transparent">
                 ELECTROVERSE
               </span>
             </div>
-            <p className="text-muted-foreground mb-4">
-              Powering the future of technology through innovation and collaboration
-            </p>
+            
             <div className="text-sm text-muted-foreground">
-              © 2024 Electroverse. All rights reserved. | 
+              © 2025 Electroverse. All rights reserved. | 
               <a href="mailto:info@electroverse.org" className="text-electric hover:underline ml-1">
                 info@electroverse.org
+              </a>
+            </div>
+            <div className="flex justify-center space-x-4 mb-4">
+              <a 
+                href={socialLinks.instagram} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-black-800 flex items-center justify-center border text-gray-300 hover:text-white hover:border-gray-500 hover:bg-gray-700 transition-all duration-300"
+              >
+                <Instagram size={20} />
+              </a>
+              <a 
+                href={socialLinks.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg bg-black-800 flex items-center justify-center border border-black-700 text-gray-300 hover:text-white hover:border-gray-500 hover:bg-gray-700 transition-all duration-300"
+              >
+                <Linkedin size={20} />
               </a>
             </div>
           </div>

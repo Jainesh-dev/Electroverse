@@ -4,8 +4,8 @@ const AboutSection = () => {
   const features = [
     {
       icon: <Users className="w-8 h-8" />,
-      title: "Community Driven",
-      description: "Built by techies, for techies. We foster collaboration and knowledge sharing.",
+      title: "Build Connections",
+      description: "Collaborate with like-minded peers, industry professionals, and mentors to grow your network and explore new opportunities.",
       color: "electric"
     },
     {
@@ -16,14 +16,14 @@ const AboutSection = () => {
     },
     {
       icon: <Zap className="w-8 h-8" />,
-      title: "High Energy",
-      description: "Electrifying events, workshops, and competitions that energize minds.",
+      title: "Create Impact",
+      description: "Work on real-world projects, participate in coding events, and contribute to a thriving tech community that drives innovation.",
       color: "neon"
     },
     {
       icon: <Code className="w-8 h-8" />,
-      title: "Tech Excellence",
-      description: "From coding bootcamps to hardware hacks, we cover all tech domains.",
+      title: "Enhance Skills",
+      description: "Gain hands-on experience, sharpen your technical expertise, and stay ahead in the ever-evolving world of technology.",
       color: "electric"
     }
   ];

@@ -292,24 +292,18 @@ const TeamSection = () => {
         <div className="mt-16 text-center">
           <div className="bg-card/30 backdrop-blur-sm border border-vibranium/20 rounded-lg p-8">
             <h3 className="text-2xl font-tech font-bold mb-4">
-              <span className="text-vibranium">JOIN</span> <span className="text-royal">OUR TEAM</span>
+              <span className="text-vibranium">Partner</span> <span className="text-royal">with us</span>
             </h3>
             <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Are you passionate about technology and innovation? We're always looking for talented individuals 
-              to join our growing community of tech enthusiasts.
+             Join us as a sponsor to empower aspiring programmers, fuel innovation, and make a lasting impact on the tech community.
+              electroverse@gmail.com
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="mailto:recruitment@electroverse.org"
-                className="inline-flex items-center justify-center px-6 py-3 bg-vibranium text-background font-semibold rounded-md glow-vibranium hover:scale-105 transition-all duration-300"
-              >
-                Apply Now
-              </a>
               <a 
                 href="#contact"
                 className="inline-flex items-center justify-center px-6 py-3 border-2 border-royal text-royal bg-transparent rounded-md hover:bg-royal hover:text-background glow-royal transition-all duration-300"
               >
-                Learn More
+                Checkout Our brochure
               </a>
             </div>
           </div>
