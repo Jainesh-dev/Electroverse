@@ -38,15 +38,18 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
           isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
         }`}>
 
-          {/* Main Heading */}
-          <div className="inline-block px-6 sm:px-12 py-4 sm:py-6 rounded-full border-4 border-vibranium glow-vibranium mb-6">
-            <h1 className="text-4xl sm:text-6xl md:text-5xl font-tech font-bold leading-tight text-vibranium">
-              ELECTROVERSE
-            </h1>
+          {/* Main Heading - Updated Style (No Oval) */}
+          <div className="mb-8 relative group cursor-default inline-block">
+             {/* Glow behind text */}
+             <div className="absolute -inset-4 bg-vibranium/20 blur-2xl rounded-full opacity-50 group-hover:opacity-80 transition-opacity duration-500" />
+             
+             <h1 className="relative text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-tech font-bold tracking-wider uppercase text-transparent bg-clip-text bg-gradient-to-b from-white via-purple-100 to-gray-400 drop-shadow-[0_0_25px_rgba(168,85,247,0.6)]">
+               ELECTROVERSE
+             </h1>
           </div>
 
           {/* Subheading */}
-          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 max-w-xl sm:max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl md:text-2xl text-muted-foreground mb-8 max-w-xl sm:max-w-2xl mx-auto font-mono">
             Powering the future of technology through innovation, collaboration, and electrifying events
           </p>
 
@@ -72,17 +75,17 @@ const HeroSection = ({ onNavigate }: HeroSectionProps) => {
 
           {/* Stats */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 max-w-3xl md:max-w-4xl mx-auto mb-12 sm:mb-16">
-            <div className="bg-card/50 backdrop-blur-sm border border-vibranium/20 rounded-lg p-4 sm:p-6 glow-vibranium">
+            <div className="bg-card/50 backdrop-blur-sm border border-vibranium/20 rounded-lg p-4 sm:p-6 glow-vibranium group hover:-translate-y-1 transition-transform duration-300">
               <div className="text-2xl sm:text-3xl font-bold text-vibranium mb-1 sm:mb-2">50+</div>
-              <div className="text-sm sm:text-base text-muted-foreground">Events Organized</div>
+              <div className="text-sm sm:text-base text-muted-foreground font-mono uppercase tracking-wider">Events Organized</div>
             </div>
-            <div className="bg-card/50 backdrop-blur-sm border border-royal/20 rounded-lg p-4 sm:p-6 glow-royal">
+            <div className="bg-card/50 backdrop-blur-sm border border-royal/20 rounded-lg p-4 sm:p-6 glow-royal group hover:-translate-y-1 transition-transform duration-300">
               <div className="text-2xl sm:text-3xl font-bold text-royal mb-1 sm:mb-2">1000+</div>
-              <div className="text-sm sm:text-base text-muted-foreground">Participants</div>
+              <div className="text-sm sm:text-base text-muted-foreground font-mono uppercase tracking-wider">Participants</div>
             </div>
-            <div className="bg-card/50 backdrop-blur-sm border border-silver/20 rounded-lg p-4 sm:p-6 glow-silver">
+            <div className="bg-card/50 backdrop-blur-sm border border-silver/20 rounded-lg p-4 sm:p-6 glow-silver group hover:-translate-y-1 transition-transform duration-300">
               <div className="text-2xl sm:text-3xl font-bold text-silver mb-1 sm:mb-2">25+</div>
-              <div className="text-sm sm:text-base text-muted-foreground">Team Members</div>
+              <div className="text-sm sm:text-base text-muted-foreground font-mono uppercase tracking-wider">Team Members</div>
             </div>
           </div>
         </div>
