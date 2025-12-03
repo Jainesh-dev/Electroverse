@@ -58,7 +58,7 @@ const Navbar = ({ activeSection, onNavigate }: NavbarProps) => {
         </div>
 
         {/* Center Navigation */}
-        <div className="flex items-center space-x-1 bg-black-800/60 rounded-2xl px-2 py-2 border border-gray-700 shadow-lg">
+        <div className="flex items-center space-x-1 bg-black-800/60 rounded-2xl px-2 py-2  ">
           {navItems.map((item) => (
             <button
               key={item.id}

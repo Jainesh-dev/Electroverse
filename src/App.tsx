@@ -3,6 +3,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/index";
 import NotFound from "./pages/NotFound";
 import Loading from "./components/ui/Loading";
+import EventDetails from './pages/EventDetails';
+
+
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -21,6 +24,7 @@ const App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Index />} />
+        <Route path="/event/:eventName" element={<EventDetails />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
     </BrowserRouter>

@@ -75,50 +75,7 @@ const Index = () => {
         </section>
       </main>
 
-      {/* Footer */}
-      <footer className="py-12 border-t border-electric/20 bg-card/30 backdrop-blur-sm">
-        <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg flex items-center justify-center">
-                <img 
-                  src="/logo.png" 
-                  alt="Electroverse Logo" 
-                  className="h-10 w-10 object-contain"
-                />
-              </div>
-              <span className="font-tech text-xl font-bold text-electric bg-gradient-to-r from-purple-400 to-gray-500 bg-clip-text text-transparent">
-                ELECTROVERSE
-              </span>
-            </div>
-            
-            <div className="text-sm text-muted-foreground">
-              © 2025 Electroverse. All rights reserved. | 
-              <a href="mailto:info@electroverse.org" className="text-electric hover:underline ml-1">
-                info@electroverse.org
-              </a>
-            </div>
-            <div className="flex justify-center space-x-4 mb-4">
-              <a 
-                href={socialLinks.instagram} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-black-800 flex items-center justify-center border text-gray-300 hover:text-white hover:border-gray-500 hover:bg-gray-700 transition-all duration-300"
-              >
-                <Instagram size={20} />
-              </a>
-              <a 
-                href={socialLinks.linkedin} 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="w-10 h-10 rounded-lg bg-black-800 flex items-center justify-center border border-black-700 text-gray-300 hover:text-white hover:border-gray-500 hover:bg-gray-700 transition-all duration-300"
-              >
-                <Linkedin size={20} />
-              </a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      
     </div>
   );
 };
