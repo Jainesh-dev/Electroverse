@@ -5,78 +5,135 @@ interface TeamMember {
   name: string;
   role: string;
   image: string;
+  linkedin?: string;
+  instagram?: string;
+  github?: string;
 }
 
 const TeamSection = () => {
-  const [activeCategory, setActiveCategory] = useState<"mentors" | "core" | "heads">("mentors");
+  const [activeCategory, setActiveCategory] =
+    useState<"mentors" | "core" | "heads">("mentors");
 
-  // Leadership Team
+  // ICONS -----------------------------------------------------
+  const LinkedinIcon = () => (
+    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M4.98 3.5C4.98 4.88 3.88 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.25 8.25h4.5v15.5H.25V8.25zM8 8.25h4.2v2.1h.06c.58-1.09 2-2.25 4.1-2.25 4.4 0 5.2 2.9 5.2 6.7v8.95H17V15c0-2-.03-4.5-2.75-4.5-2.75 0-3.18 2.15-3.18 4.37v8.9H8V8.25z" />
+    </svg>
+  );
+
+  // CLEAN MODERN INSTAGRAM ICON
+  const InstagramIcon = () => (
+    <svg
+      className="w-4 h-4"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+      <circle cx="12" cy="12" r="4" />
+      <circle cx="17.5" cy="6.5" r="1" />
+    </svg>
+  );
+
+  const GithubIcon = () => (
+    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M12 .5C5.7.5.5 5.7.5 12c0 5.1 3.3 9.4 7.9 10.9.6.1.8-.3.8-.6v-2.1c-3.2.7-3.9-1.5-3.9-1.5-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.4 1.1 3 .8.1-.7.4-1.1.7-1.4-2.6-.3-5.4-1.3-5.4-5.8 0-1.1.4-2 1-2.8-.1-.2-.4-1.3.1-2.6 0 0 .8-.3 2.8 1 .7-.2 1.5-.3 2.3-.3s1.6.1 2.3.3c2-1.3 2.8-1 2.8-1 .5 1.3.2 2.4.1 2.6.6.8 1 1.7 1 2.8 0 4.5-2.8 5.5-5.4 5.8.4.4.7 1 .7 2v3c0 .3.2.7.8.6 4.6-1.5 7.9-5.8 7.9-10.9C23.5 5.7 18.3.5 12 .5z" />
+    </svg>
+  );
+
+  // DATA -----------------------------------------------------
+
   const leadershipTeam: TeamMember[] = [
-    { id: 1, name: "alen Stanley", role: "Secretary", image: "/team/Alen.jpg" },
-    { id: 2, name: "Tejas", role: "Secretary", image: "/team/tejas.jpg" },
-    { id: 3, name: "Alex Chen", role: "President", image: "/team/alex.jpg" },
-    { id: 4, name: "Sarah Johnson", role: "Vice President", image: "/team/sarah.jpg" },
-    { id: 5, name: "Marcus Rodriguez", role: "Technical Lead", image: "/team/marcus.jpg" },
-    { id: 6, name: "Emily Watson", role: "Events Coordinator", image: "/team/emily.jpg" },
+    { id: 1, name: "alen Stanley", role: "Secretary", image: "/team/Alen.jpg", linkedin: "#", instagram: "#", github: "#" },
+    { id: 2, name: "Tejas", role: "Secretary", image: "/team/tejas.jpg", linkedin: "#", instagram: "#", github: "#" },
+    { id: 3, name: "Alex Chen", role: "President", image: "/team/alex.jpg", linkedin: "#", instagram: "#", github: "#" },
+    { id: 4, name: "Sarah Johnson", role: "Vice President", image: "/team/sarah.jpg", linkedin: "#", instagram: "#", github: "#" },
+    { id: 5, name: "Marcus Rodriguez", role: "Technical Lead", image: "/team/marcus.jpg", linkedin: "#", instagram: "#", github: "#" },
+    { id: 6, name: "Emily Watson", role: "Events Coordinator", image: "/team/emily.jpg", linkedin: "#", instagram: "#", github: "#" },
   ];
 
-  // Core Members
   const coreMembers: TeamMember[] = [
-    { id: 7, name: "David Kim", role: "Developer", image: "/team/david.jpg" },
-    { id: 8, name: "Lisa Park", role: "Designer", image: "/team/lisa.jpg" },
-    { id: 9, name: "James Wilson", role: "Developer", image: "/team/james.jpg" },
-    { id: 10, name: "Maya Patel", role: "Marketing Lead", image: "/team/maya.jpg" },
-    { id: 11, name: "Ryan Scott", role: "Developer", image: "/team/ryan.jpg" },
-    { id: 12, name: "Sophia Lee", role: "Content Writer", image: "/team/sophia.jpg" },
-    { id: 13, name: "Rohan Verma", role: "Developer", image: "/team/rohan.jpg" },
-    { id: 14, name: "Priya Sharma", role: "Designer", image: "/team/priya.jpg" },
-    { id: 15, name: "Ankit Gupta", role: "Developer", image: "/team/ankit.jpg" },
-    { id: 16, name: "Neha Reddy", role: "Marketing", image: "/team/neha.jpg" },
+    { id: 7, name: "David Kim", role: "Developer", image: "/team/david.jpg", linkedin: "#", instagram: "#", github: "#" },
+    { id: 8, name: "Lisa Park", role: "Designer", image: "/team/lisa.jpg", linkedin: "#", instagram: "#", github: "#" },
+    { id: 9, name: "James Wilson", role: "Developer", image: "/team/james.jpg", linkedin: "#", instagram: "#", github: "#" },
+    { id: 10, name: "Maya Patel", role: "Marketing Lead", image: "/team/maya.jpg", linkedin: "#", instagram: "#", github: "#" },
+    { id: 11, name: "Ryan Scott", role: "Developer", image: "/team/ryan.jpg", linkedin: "#", instagram: "#", github: "#" },
   ];
 
-  // Mentors
   const mentors: TeamMember[] = [
-    { id: 101, name: "Dr. Jennifer Adams", role: "Faculty Advisor", image: "/mentors/jennifer.jpg" },
-    { id: 102, name: "Prof. Michael Zhang", role: "Technical Mentor", image: "/mentors/michael.jpg" },
-    { id: 103, name: "Dr. Rachel Thompson", role: "Innovation Mentor", image: "/mentors/rachel.jpg" },
+    { id: 101, name: "Dr. Jennifer Adams", role: "Faculty Advisor", image: "/mentors/jennifer.jpg", linkedin: "#", instagram: "#", github: "#" },
+    { id: 102, name: "Prof. Michael Zhang", role: "Technical Mentor", image: "/mentors/michael.jpg", linkedin: "#", instagram: "#", github: "#" },
+    { id: 103, name: "Dr. Rachel Thompson", role: "Innovation Mentor", image: "/mentors/rachel.jpg", linkedin: "#", instagram: "#", github: "#" },
   ];
 
-  const allMembers = [...leadershipTeam, ...coreMembers, ...mentors];
+  // FILTER -----------------------------------------------------
 
-  const filteredMembers = activeCategory === "mentors" 
-    ? mentors
-    : activeCategory === "heads" 
-      ? leadershipTeam 
-      : activeCategory === "core" 
-        ? coreMembers 
-        : mentors;
+  const filteredMembers =
+    activeCategory === "mentors"
+      ? mentors
+      : activeCategory === "heads"
+      ? leadershipTeam
+      : coreMembers;
+
+  const gridClasses =
+    activeCategory === "core"
+      ? "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5"
+      : activeCategory === "heads"
+      ? "grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6"
+      : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3";
+
+  // CARD -----------------------------------------------------
 
   const TeamCard = ({ member }: { member: TeamMember }) => (
-    <div className="bg-card/50 backdrop-blur-sm border border-vibranium/20 rounded-lg p-4 hover:scale-105 transition-all duration-300 group">
-      <div className="mb-3">
-        <div className="w-24 h-24 mx-auto rounded-full bg-gradient-to-br from-vibranium to-royal overflow-hidden border-2 border-vibranium/30">
+    <div className="bg-card/50 backdrop-blur-sm border border-vibranium/20 rounded-xl p-6 hover:scale-105 transition-all duration-300 group shadow-lg">
+      <div className="mb-4">
+        <div className="w-32 h-32 mx-auto rounded-full bg-gradient-to-br from-vibranium to-royal overflow-hidden border-2 border-vibranium/40">
           <img
             src={member.image}
             alt={member.name}
-            className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+            className="w-full h-full object-cover group-hover:scale-110 transition-all duration-300"
             onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.src = `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=8B5CF6&color=fff&bold=true&size=96`;
+              (e.target as HTMLImageElement).src =
+                `https://ui-avatars.com/api/?name=${encodeURIComponent(member.name)}&background=8B5CF6&color=fff&bold=true&size=112`;
             }}
           />
         </div>
       </div>
 
       <div className="text-center">
-        <h3 className="text-sm font-bold mb-1">{member.name}</h3>
-        <div className="text-xs text-vibranium font-medium">{member.role}</div>
+        <h3 className="text-base font-bold mb-1">{member.name}</h3>
+        <div className="text-sm text-vibranium font-medium mb-3">{member.role}</div>
+
+        {/* Social icons */}
+        <div className="flex items-center justify-center gap-3">
+          {member.linkedin && (
+            <a className="p-2 bg-gray-800/60 hover:bg-vibranium/80 rounded-full" href={member.linkedin} target="_blank">
+              <LinkedinIcon />
+            </a>
+          )}
+          {member.instagram && (
+            <a className="p-2 bg-gray-800/60 hover:bg-rose-500/80 rounded-full" href={member.instagram} target="_blank">
+              <InstagramIcon />
+            </a>
+          )}
+          {member.github && (
+            <a className="p-2 bg-gray-800/60 hover:bg-gray-300 text-black rounded-full" href={member.github} target="_blank">
+              <GithubIcon />
+            </a>
+          )}
+        </div>
       </div>
     </div>
   );
 
-  const CategoryButton = ({ category, label }: { category: string; label: string }) => (
+  // CATEGORY BUTTON --------------------------------------------
+
+  const CategoryButton = ({ category, label }: { category: any; label: string }) => (
     <button
-      onClick={() => setActiveCategory(category as any)}
+      onClick={() => setActiveCategory(category)}
       className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
         activeCategory === category
           ? "bg-vibranium text-background glow-vibranium"
@@ -89,60 +146,29 @@ const TeamSection = () => {
 
   return (
     <section className="py-20 relative overflow-hidden" id="team">
-      {/* Background Effects */}
-      <div className="absolute inset-0">
-        <div className="absolute top-10 left-1/4 w-64 h-64 rounded-full bg-vibranium/10 blur-3xl animate-pulse-glow" />
-        <div className="absolute bottom-10 right-1/4 w-48 h-48 rounded-full bg-royal/10 blur-3xl animate-pulse-glow" style={{ animationDelay: "1.5s" }} />
-      </div>
-
       <div className="container mx-auto px-4 relative z-10">
+        {/* Heading */}
         <div className="text-center mb-12">
-          <div className="flex items-center justify-center gap-2 mb-4 text-royal">
-            <span className="text-sm font-semibold uppercase tracking-wider">Meet the Team</span>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-tech font-bold mb-6">
-            <span className="text-vibranium">OUR</span> <span className="text-royal">TEAM</span>
+          <h2 className="text-4xl md:text-5xl font-tech font-bold">
+            <span className="text-vibranium">OUR</span>{" "}
+            <span className="text-royal">TEAM</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mt-4">
             The brilliant minds behind Electroverse
           </p>
 
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-3 mb-12">
+          <div className="flex flex-wrap justify-center gap-3 mt-8">
             <CategoryButton category="mentors" label="Mentors" />
             <CategoryButton category="core" label="Core Members" />
-            <CategoryButton category="leadership" label="Heads" />
-            
-            
+            <CategoryButton category="heads" label="Heads" />
           </div>
         </div>
 
-        {/* Team Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-4">
-          {filteredMembers.map((member) => (
-            <TeamCard key={member.id} member={member} />
+        {/* TEAM GRID */}
+        <div className={`grid ${gridClasses} gap-6 w-fit mx-auto`}>
+          {filteredMembers.map((m) => (
+            <TeamCard key={m.id} member={m} />
           ))}
-        </div>
-
-        {/* Partner with us - UNCHANGED */}
-        <div className="mt-16 text-center">
-          <div className="bg-card/30 backdrop-blur-sm border border-vibranium/20 rounded-lg p-8">
-            <h3 className="text-2xl font-tech font-bold mb-4">
-              <span className="text-vibranium">Partner</span> <span className="text-royal">with us</span>
-            </h3>
-            <p className="text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Join us as a sponsor to empower aspiring programmers, fuel innovation, and make a lasting impact on the tech community.
-              electroverse@gmail.com
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a 
-                href="#contact"
-                className="inline-flex items-center justify-center px-6 py-3 border-2 border-royal text-royal bg-transparent rounded-md hover:bg-royal hover:text-background glow-royal transition-all duration-300"
-              >
-                Checkout Our brochure
-              </a>
-            </div>
-          </div>
         </div>
       </div>
     </section>
