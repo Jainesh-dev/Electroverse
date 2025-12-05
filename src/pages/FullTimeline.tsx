@@ -38,10 +38,10 @@ const timelineData: TimelineYearBlock[] = [
     year: 2025,
     events: [
       {
-        title: "Electroverse Summit 2025",
-        description: "A tech summit featuring expo, talks and hiring drives.",
-        status: "upcoming",
-        image: "/events/summit-2025.jpg",
+        title: "Techathon 2025",
+        description: "Hardware Hackathon with ₹50,000 prize pool",
+        status: "past",
+        image: "public/Techathon 2025.jpg",
       },
     ],
   },
@@ -49,53 +49,32 @@ const timelineData: TimelineYearBlock[] = [
     year: 2024,
     events: [
       {
-        title: "Circuitry Maze Workshop",
+        title: "Circuitry Maze ",
         description: "Hands-on PCB design workshop.",
         status: "past",
-        image: "/events/circuitry-maze-2024.jpg",
+        image: "public/Circuitary Maze 2024.jpg",
       },
       {
         title: "Techathon 2024",
-        description: "AI, IoT and Web3 hackathon with ₹50,000 prize pool.",
+        description: "Hardware Hackathon with ₹50,000 prize pool.",
         status: "past",
-        image: "/events/techathon-2024.jpg",
+        image: "public/Techathon 2024.jpg",
       },
-    ],
+    ],  
   },
   {
     year: 2023,
     events: [
       {
-        title: "Circuitry Maze 2023",
+        title: "Techathon 2023",
         description: "Large-scale electronics building event.",
         status: "past",
-        image: "/events/circuitry-maze-2023.jpg",
-      },
-      {
-        title: "CodeSprint 2023",
-        description: "Competitive coding sprint with 120+ coders.",
-        status: "past",
-        image: "/events/codesprint-2023.jpg",
+        image: "public/Techathon 2023.jpg",
       },
     ],
   },
-  {
-    year: 2022,
-    events: [
-      {
-        title: "Electroverse Launch Event",
-        description: "The first-ever inauguration of the Electroverse club.",
-        status: "past",
-        image: "/events/launch-2022.jpg",
-      },
-      {
-        title: "Mini Hackathon 2022",
-        description: "Theme-based hackathon for freshers.",
-        status: "past",
-        image: "/events/mini-hack-2022.jpg",
-      },
-    ],
-  },
+  
+  
 ];
 
 const FullTimeline = () => {
@@ -126,7 +105,7 @@ const FullTimeline = () => {
           </h2>
           <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
             A journey through our major workshops, hackathons, and innovations — from{" "}
-            <strong>2022</strong> to <strong>2026</strong>.
+            <strong>2023</strong> to <strong>2026</strong>.
           </p>
         </div>
 
