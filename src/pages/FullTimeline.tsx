@@ -8,7 +8,7 @@ interface TimelineEventItem {
   title: string;
   description: string;
   status: TimelineStatus;
-  image?: string; // ✅ optional image for each event
+  image?: string;
 }
 
 interface TimelineYearBlock {
@@ -18,19 +18,30 @@ interface TimelineYearBlock {
 
 const timelineData: TimelineYearBlock[] = [
   {
+    year: 2026,
+    events: [
+      {
+        title: "Techathon 2026",
+        description: "Next-gen hackathon focusing on AI agents, Web3, and IoT.",
+        status: "upcoming",
+        image: "/events/techathon-2026.jpg",
+      },
+      {
+        title: "Circuitry Maze 2026",
+        description: "Advanced circuit design and PCB sprint challenge.",
+        status: "upcoming",
+        image: "/events/circuitry-maze-2026.jpg",
+      },
+    ],
+  },
+  {
     year: 2025,
     events: [
       {
         title: "Electroverse Summit 2025",
         description: "A tech summit featuring expo, talks and hiring drives.",
         status: "upcoming",
-        image: "/events/summit-2025.jpg", // ✅ put your actual image paths
-      },
-      {
-        title: "Techathon 2025",
-        description: "48-hour hackathon with 300+ participants.",
-        status: "upcoming",
-        image: "/events/techathon-2025.jpg",
+        image: "/events/summit-2025.jpg",
       },
     ],
   },
@@ -91,7 +102,6 @@ const FullTimeline = () => {
   const [filter, setFilter] = useState<"all" | "past" | "upcoming">("all");
   const navigate = useNavigate();
 
-  // ensure page opens at top
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "auto" });
   }, []);
@@ -116,7 +126,7 @@ const FullTimeline = () => {
           </h2>
           <p className="text-muted-foreground text-lg mt-4 max-w-2xl mx-auto">
             A journey through our major workshops, hackathons, and innovations — from{" "}
-            <strong>2022</strong> to <strong>2025</strong>.
+            <strong>2022</strong> to <strong>2026</strong>.
           </p>
         </div>
 
@@ -162,7 +172,7 @@ const FullTimeline = () => {
               return (
                 <div
                   key={block.year}
-                  className="relative md:flex md:items-stretch md:min-h-[140px]"
+                  className="relative md:flex md:items-stretch md:min-h-[160px]"
                 >
                   {/* Mobile (single column) */}
                   <div className="md:hidden w-full">
@@ -188,7 +198,6 @@ const FullTimeline = () => {
                             </h4>
                           </div>
 
-                          {/* ✅ Event image (mobile) */}
                           {event.image && (
                             <div className="mt-2 mb-3 rounded-lg overflow-hidden border border-white/10">
                               <img
@@ -207,17 +216,21 @@ const FullTimeline = () => {
                     </div>
                   </div>
 
-                  {/* Desktop left side */}
-                  <div className="hidden md:flex w-1/2 items-center">
+                  {/* LEFT SIDE (desktop) */}
+                  <div className="hidden md:flex w-1/2 items-stretch justify-end">
                     {isLeft && (
-                      <div className="w-full pr-10 text-right relative">
-                        <div className="absolute top-1/2 right-0 h-px w-10 bg-electric/60 shadow-[0_0_12px_rgba(56,189,248,0.9)]" />
-                        <div className="mb-3">
+                      <div className="w-full pr-6 text-right relative pt-6">
+                        {/* Year label – pulled a bit away from center line */}
+                        <div className="absolute right-10 top-0">
                           <span className="text-electric font-bold text-3xl">
                             {block.year}
                           </span>
                         </div>
-                        <div className="space-y-4">
+
+                        {/* Connector from center line */}
+                        <div className="absolute top-[52px] right-0 h-px w-8 bg-electric/60 shadow-[0_0_12px_rgba(56,189,248,0.9)]" />
+
+                        <div className="mt-6 space-y-4">
                           {filteredEvents.map((event, idx) => (
                             <div
                               key={idx}
@@ -230,7 +243,6 @@ const FullTimeline = () => {
                                 <Calendar className="w-4 h-4 text-electric" />
                               </div>
 
-                              {/* ✅ Event image (desktop left) */}
                               {event.image && (
                                 <div className="mt-2 mb-3 rounded-lg overflow-hidden border border-white/10">
                                   <img
@@ -251,22 +263,26 @@ const FullTimeline = () => {
                     )}
                   </div>
 
-                  {/* Center dot */}
+                  {/* Center dot (desktop) */}
                   <div className="hidden md:flex w-0 flex-col items-center mx-4">
                     <div className="w-6 h-6 rounded-full bg-electric border-2 border-white shadow-[0_0_14px_rgba(56,189,248,0.9)]" />
                   </div>
 
-                  {/* Desktop right side */}
-                  <div className="hidden md:flex w-1/2 items-center">
+                  {/* RIGHT SIDE (desktop) */}
+                  <div className="hidden md:flex w-1/2 items-stretch">
                     {!isLeft && (
-                      <div className="w-full pl-10 relative">
-                        <div className="absolute top-1/2 left-0 h-px w-10 bg-electric/60 shadow-[0_0_12px_rgba(56,189,248,0.9)]" />
-                        <div className="mb-3">
+                      <div className="w-full pl-6 relative pt-6">
+                        {/* Year label – pulled a bit away from center line */}
+                        <div className="absolute left-10 top-0">
                           <span className="text-electric font-bold text-3xl">
                             {block.year}
                           </span>
                         </div>
-                        <div className="space-y-4">
+
+                        {/* Connector from center line */}
+                        <div className="absolute top-[52px] left-0 h-px w-8 bg-electric/60 shadow-[0_0_12px_rgba(56,189,248,0.9)]" />
+
+                        <div className="mt-6 space-y-4">
                           {filteredEvents.map((event, idx) => (
                             <div
                               key={idx}
@@ -279,7 +295,6 @@ const FullTimeline = () => {
                                 </h4>
                               </div>
 
-                              {/* ✅ Event image (desktop right) */}
                               {event.image && (
                                 <div className="mt-2 mb-3 rounded-lg overflow-hidden border border-white/10">
                                   <img
