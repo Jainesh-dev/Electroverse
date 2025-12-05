@@ -46,7 +46,7 @@ const EventCountdown = () => {
             <span className="text-sm font-semibold uppercase tracking-wider">Next Event</span>
           </div>
           <h2 className="text-4xl md:text-5xl font-tech font-bold mb-4">
-            <span className="text-vibranium">TECH-A-THON</span> <span className="text-royal">2024</span>
+            <span className="text-vibranium">TECH-A-THON</span> <span className="text-royal">2026</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
             Join us for the most electrifying tech event of the year. Innovation meets creativity!
@@ -104,5 +104,6 @@ const EventCountdown = () => {
     </section>
   );
 };
+
 
 export default EventCountdown;
