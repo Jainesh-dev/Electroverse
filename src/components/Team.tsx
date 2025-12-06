@@ -52,7 +52,7 @@ const TeamSection = () => {
     { id: 3, name: "Rahul Jain", role: "Design Head", image: "public/DH.jpg", linkedin: "#", instagram: "#", github: "#" },
     { id: 4, name: "Priyani Gulgulia", role: "Technical Head", image: "public/TH.jpg", linkedin: "#", instagram: "#", github: "#" },
     { id: 5, name: "Keya Desai", role: "Publicity Head", image: "/team/marcus.jpg", linkedin: "#", instagram: "#", github: "#" },
-    { id: 6, name: "Shravan Kundap", role: "Marketing Head", image: "/team/emily.jpg", linkedin: "#", instagram: "#", github: "#" },
+    { id: 6, name: "Shravan Kundap", role: "Marketing Head", image: "public/MH.jpg", linkedin: "#", instagram: "#", github: "#" },
   ];
 
   const coreMembers: TeamMember[] = [
