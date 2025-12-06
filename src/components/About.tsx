@@ -37,10 +37,10 @@ const AboutSection = () => {
   // PHOTO SLIDER LOGIC
   // ---------------------------
   const photos = [
-    "/images/event1.jpg",
-    "/images/event2.jpg",
-    "/images/event3.jpg",
-    "/images/event4.jpg",
+    "public/Event_1.jpg",
+    "public/Techathon 2025.jpg",
+    "public/Event_2.jpg",
+    
   ];
 
   const [index, setIndex] = useState(0);
